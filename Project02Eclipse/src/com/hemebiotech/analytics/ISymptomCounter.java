@@ -1,5 +1,6 @@
 package com.hemebiotech.analytics;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -10,11 +11,12 @@ import java.util.Map;
 
 public interface ISymptomCounter {
 
-    /** If no data is availaible return an empty map. @return a Map of All Symptoms and The Number Of Each Symptoms.
-     *
-     * @return A list of symptoms associated with the number of repetitions.
+    /**
+     **If no data is availaible return an empty map. @return a Map of All Symptoms and The Number Of Each Symptoms.
+      * @param symptomsList
+     * @return A Map of symptoms associated with the number of repetitions.
      */
 
-    Map<String, Integer> GetTheFrequencyOfSymptoms();
+    Map<String,Integer> GetTheFrequencyOfSymptoms(List<String>symptomsList);
 
 }

@@ -1,16 +1,25 @@
 package com.hemebiotech.analytics;
 
 
+import java.util.List;
+import java.util.Map;
+
 public class Application {
 
     public static void main(String[] args) {
 
+        ISymptomReader readSymptoms = new ReadSymptomDataFromFile("symptoms.txt");
 
-        SymptomCountWritingInFile resultOfSymptomCount = new SymptomCountWritingInFile();
+        List<String> symptomsList = readSymptoms.GetSymptoms();
 
-        resultOfSymptomCount.GetTheFrequencyOfSymptomInFile();
+        ISymptomCounter symptomsCounter = new SymptomsCounter();
 
-        System.out.println("The file : Result.out with the number of repetition of each symptom has been created");
+        Map<String, Integer> symptomsCountMap = symptomsCounter.GetTheFrequencyOfSymptoms(symptomsList);
+
+        ISymptomWriter writeResultOut = new SymptomCountWritingInFile();
+
+        writeResultOut.GetTheFrequencyOfSymptom(symptomsCountMap);
+
     }
 
 

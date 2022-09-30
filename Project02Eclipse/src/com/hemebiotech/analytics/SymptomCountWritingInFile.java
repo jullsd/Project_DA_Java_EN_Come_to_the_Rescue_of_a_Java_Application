@@ -6,25 +6,22 @@ import java.io.IOException;
 import java.util.Map;
 
 
-public class SymptomCountWritingInFile {
-
-    public SymptomsCounter symptomsCounterToWrite = new SymptomsCounter();
+public class SymptomCountWritingInFile implements ISymptomWriter {
 
     /**
      * Used to Write the result.out file that counts the number of repetitions of each symptom
      *
      * @return The result.out file where all the symptoms are written in alphabetical order associated with the number of repetitions of each symptom.
      */
-    public void GetTheFrequencyOfSymptomInFile() {
+    @Override
+    public void GetTheFrequencyOfSymptom(Map<String, Integer> symptomMapCount) {
 
 
         try {
             FileWriter fileWriter = new FileWriter("result.out", false);
             BufferedWriter mywriter = new BufferedWriter(fileWriter);
 
-            Map<String, Integer> symptomMapCount;
 
-            symptomMapCount = symptomsCounterToWrite.GetTheFrequencyOfSymptoms();
             for (Map.Entry<String, Integer> entry : symptomMapCount.entrySet()) {
 
 
@@ -40,8 +37,13 @@ public class SymptomCountWritingInFile {
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Error");
+
         }
+
     }
+
+
 }
+
 
 

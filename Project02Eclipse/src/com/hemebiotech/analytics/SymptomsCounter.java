@@ -12,23 +12,18 @@ import java.util.TreeMap;
 public class SymptomsCounter implements ISymptomCounter {
 
 
-    List<String> symptomsList;
+
     /**
      * Used to count and store the number of repetitions of each symptom.
-     * @param symptomList A list of all symptoms with possible duplicates.
+     @param symptomList A list of all symptoms with possible duplicates.
     */
 
      /**
-     * @return A Map hat stores the symptoms in alphabetical order and the corresponding number of repetition.
+     @return A Map stores the symptoms in alphabetical order and the corresponding number of repetition.
      */
     @Override
-    public Map<String, Integer> GetTheFrequencyOfSymptoms() {
+    public Map<String, Integer> GetTheFrequencyOfSymptoms(List<String> symptomsList) {
 
-        ReadSymptomDataFromFile symptomsReader = new ReadSymptomDataFromFile("symptoms.txt");
-
-
-
-        symptomsList = symptomsReader.GetSymptoms();
 
         Map<String, Integer> counterOfSymptomsMap = new TreeMap<>();
 
