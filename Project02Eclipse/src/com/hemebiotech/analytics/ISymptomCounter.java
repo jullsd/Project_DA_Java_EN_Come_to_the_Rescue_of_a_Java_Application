@@ -10,9 +10,10 @@ import java.util.Map;
 
 public interface ISymptomCounter {
 
-    /**g
-     * @param symptomsList
-     * @return A Map of symptoms associated with the number of repetitions
+    /**
+     * @param symptomsList A list of symptoms
+     *
+     *  @return A Map of symptoms associated with the number of repetitions.
      */
 
     Map<String,Integer> getTheFrequencyOfSymptoms(List<String>symptomsList);
