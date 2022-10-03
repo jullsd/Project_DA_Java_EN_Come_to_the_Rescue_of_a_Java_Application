@@ -12,17 +12,12 @@ import java.util.TreeMap;
 public class SymptomsCounter implements ISymptomCounter {
 
 
-
-    /**
-     * Used to count and store the number of repetitions of each symptom.
-     @param symptomList A list of all symptoms with possible duplicates.
-    */
-
      /**
      @return A Map stores the symptoms in alphabetical order and the corresponding number of repetition.
      */
+
     @Override
-    public Map<String, Integer> GetTheFrequencyOfSymptoms(List<String> symptomsList) {
+    public Map<String, Integer> getTheFrequencyOfSymptoms(List<String> symptomsList) {
 
 
         Map<String, Integer> counterOfSymptomsMap = new TreeMap<>();
