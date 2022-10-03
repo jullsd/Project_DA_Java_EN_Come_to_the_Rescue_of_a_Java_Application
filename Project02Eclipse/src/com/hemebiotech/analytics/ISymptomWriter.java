@@ -2,7 +2,7 @@ package com.hemebiotech.analytics;
 
 import java.util.Map;
 
- /** Anything that will write the frequency of symptoms in data
+ /** Anything that will write the frequency of symptoms in data.
          */
 
 
@@ -15,7 +15,7 @@ public interface ISymptomWriter {
       */
 
 
-    void GetTheFrequencyOfSymptom(Map<String, Integer> symptomMapCount);
+    void writeTheFrequencyOfSymptoms(Map<String, Integer> symptomMapCount);
 
 
 }

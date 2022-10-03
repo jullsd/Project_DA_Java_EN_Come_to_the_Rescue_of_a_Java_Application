@@ -10,15 +10,15 @@ public class Application {
 
         ISymptomReader readSymptoms = new ReadSymptomDataFromFile("symptoms.txt");
 
-        List<String> symptomsList = readSymptoms.GetSymptoms();
+        List<String> symptomsList = readSymptoms.getSymptoms();
 
         ISymptomCounter symptomsCounter = new SymptomsCounter();
 
-        Map<String, Integer> symptomsCountMap = symptomsCounter.GetTheFrequencyOfSymptoms(symptomsList);
+        Map<String, Integer> symptomsCountMap = symptomsCounter.getTheFrequencyOfSymptoms(symptomsList);
 
-        ISymptomWriter writeResultOut = new SymptomCountWritingInFile();
+        ISymptomWriter writeTheResult = new SymptomsCountWritingInFile("result.out");
 
-        writeResultOut.GetTheFrequencyOfSymptom(symptomsCountMap);
+        writeTheResult.writeTheFrequencyOfSymptoms(symptomsCountMap);
 
     }
 
