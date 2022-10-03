@@ -7,14 +7,11 @@ import java.util.TreeMap;
 
 /**
  * Simple brute force implementation
+ *
  */
 
 public class SymptomsCounter implements ISymptomCounter {
 
-
-     /**
-     @return A Map stores the symptoms in alphabetical order and the corresponding number of repetition.
-     */
 
     @Override
     public Map<String, Integer> getTheFrequencyOfSymptoms(List<String> symptomsList) {
