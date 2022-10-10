@@ -5,23 +5,22 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-/**
- * Simple brute force implementation
- *
- */
 
-public class SymptomsCounter implements ISymptomCounter {
+public class SymptomsCounterSorted implements ISymptomCounter {
 
-
+    /**
+     * @param symptomsList A list of symptoms
+     * The important thing is the return which is a TreeMap with
+     * the symptoms in alphabetical order associated with their repetitions.
+     */
     @Override
     public Map<String, Integer> getTheFrequencyOfSymptoms(List<String> symptomsList) {
 
 
         Map<String, Integer> counterOfSymptomsMap = new TreeMap<>();
 
-        for (int x = 0; x < symptomsList.size(); x++) {
 
-            String kSymptomName = symptomsList.get(x);
+        for (String kSymptomName : symptomsList) {
 
 
             counterOfSymptomsMap.putIfAbsent(kSymptomName, 0);
