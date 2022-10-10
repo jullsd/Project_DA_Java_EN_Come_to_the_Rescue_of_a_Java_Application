@@ -14,7 +14,11 @@ public class SymptomsCountWritingInFile implements ISymptomWriter {
         this.filepath = filepath;
     }
 
-
+    /**
+     *
+     * @param symptomMapCount A Map of symptoms associated with the number of repetitions.
+     *  use to write the frequency of symptoms in a fileg
+     */
     @Override
     public void writeTheFrequencyOfSymptoms(Map<String, Integer> symptomMapCount) {
 
