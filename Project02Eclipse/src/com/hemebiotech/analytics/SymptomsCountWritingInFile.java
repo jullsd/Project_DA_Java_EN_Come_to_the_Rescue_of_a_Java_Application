@@ -5,10 +5,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
 
-/**
- * Simple brute force implementation
- *
- */
 
 public class SymptomsCountWritingInFile implements ISymptomWriter {
 
@@ -20,32 +16,31 @@ public class SymptomsCountWritingInFile implements ISymptomWriter {
 
 
     @Override
-    public boolean writeTheFrequencyOfSymptoms(Map<String, Integer> symptomMapCount) {
+    public void writeTheFrequencyOfSymptoms(Map<String, Integer> symptomMapCount) {
 
-                try {
+        try {
 
-                FileWriter fileWriter = new FileWriter(filepath, false);
-                BufferedWriter mywriter = new BufferedWriter(fileWriter);
-
-
-                for (Map.Entry<String, Integer> entry : symptomMapCount.entrySet()) {
+            FileWriter fileWriter = new FileWriter(filepath, false);
+            BufferedWriter mywriter = new BufferedWriter(fileWriter);
 
 
-                    mywriter.write(entry.getKey());
-                    mywriter.write(" : " + entry.getValue().toString());
-
-                    mywriter.newLine();
-
-                }
-                mywriter.close();
-                return true;
+            for (Map.Entry<String, Integer> entry : symptomMapCount.entrySet()) {
 
 
-            } catch (IOException e) {
-                e.printStackTrace();
-                System.out.println("Error");
-                return false;
+                mywriter.write(entry.getKey());
+                mywriter.write(" : " + entry.getValue().toString());
+
+                mywriter.newLine();
+
             }
+            mywriter.close();
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Error");
+
+        }
 
     }
 }
